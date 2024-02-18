@@ -9,6 +9,8 @@ const {getMessaging} = require("firebase-admin/messaging");
 // const serviceAccount = require("path/to/serviceAccountKey.json");
 require("dotenv").config()
 
+const PORT = process.env.PORT || 8080
+
 admin.initializeApp({
   credential: applicationDefault(),
   projectId:"notification-66cc8"
@@ -111,7 +113,7 @@ app.use("/",userRouter)
 
 // listening ..........
 
-app.listen(8080,()=> {
+app.listen(PORT,()=> {
     console.log("Server is running at port 8080")
 })
 
